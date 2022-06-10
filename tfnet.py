@@ -40,7 +40,7 @@ test_indices = list(range(7700, 9800))
 
 model = LES(input_channels = input_length*2, output_channels = 2, kernel_size = kernel_size, 
             dropout_rate = dropout_rate, time_range = time_range).to(device)
-model = nn.DataParallel(model, device_ids=[0, 1, 2, 3])
+model = nn.DataParallel(model, device_ids=[0])
 
 from s3fs.core import S3FileSystem
 s3 = S3FileSystem(

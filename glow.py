@@ -184,7 +184,7 @@ if __name__ == "__main__":
     model_single = Glow(
         3, args.n_flow, args.n_block, affine=args.affine, conv_lu=not args.no_lu
     )
-    model = nn.DataParallel(model_single, device_ids=[0, 1, 2, 3])
+    model = nn.DataParallel(model_single, device_ids=[0])
     # model = model_single
     model = model.to(device)
 
