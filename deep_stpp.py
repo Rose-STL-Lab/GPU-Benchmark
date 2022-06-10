@@ -15,14 +15,10 @@ from tqdm.contrib import tenumerate
 import torch
 from torch.utils.data import DataLoader
 
-import plotly.graph_objects as go
-import plotly.express as px
-
 def imshow(fig):
     return display(SVG(fig.to_image(format="svg")))
 
 sys.path.append("deep-stpp")
-from plotter import *
 from model import DeepSTPP, log_ft, t_intensity, s_intensity
 from data.dataset import SlidingWindowWrapper
 from data.synthetic import *
