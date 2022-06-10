@@ -68,8 +68,9 @@ s3 = S3FileSystem(
 dataset = 'covid_nj_cases'
 key = f'processed/{dataset}.npz'
 bucket = 'deep-stpp'
+s3.download('{}/{}'.format(bucket, key), 'deep-stpp/covid_nj_cases.npz')
 
-npzf = np.load(s3.open('{}/{}'.format(bucket, key)), allow_pickle=True)
+npzf = np.load('deep-stpp/covid_nj_cases.npz', allow_pickle=True)
 
 trainset = SlidingWindowWrapper(npzf['train'], normalized=True)
 valset   = SlidingWindowWrapper(npzf['val'],   normalized=True, min=trainset.min, max=trainset.max)
