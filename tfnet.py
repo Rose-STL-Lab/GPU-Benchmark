@@ -92,7 +92,7 @@ scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size = 1, gamma = 0.
 train_mse = []
 valid_mse = []
 test_mse = []
-for i in trange(5):
+for i in trange(5, file=sys.stdout):
     start = time.time()
     torch.cuda.empty_cache()
     scheduler.step()

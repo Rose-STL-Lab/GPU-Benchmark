@@ -70,7 +70,7 @@ def main():
         dev_losses = []
         test_losses = []
 
-        for i in trange (10): 
+        for i in trange (10, file=sys.stdout): 
             model, loss, dev_loss = tr.train(
                 model, input_seqs, target_meo_seqs, dev_input_seqs, dev_target_meo_seqs, 
                 snapshots, iterations=1, lr=0.001)

@@ -93,7 +93,7 @@ def train_rmtpp(model, train_loader, val_loader, config, logger, device):
     best_eval = np.infty
     loss_meter = AverageMeter()
     
-    for epoch in trange(config.epochs):
+    for epoch in trange(config.epochs, file=sys.stdout):
         loss_total = 0
         model.train()
         for index, data in tenumerate(train_loader):
@@ -135,10 +135,10 @@ def train(model, train_loader, val_loader, config, logger, device):
     tll_meter = AverageMeter()
     loss_meter = AverageMeter()
     
-    for epoch in trange(config.epochs):
+    for epoch in trange(config.epochs, file=sys.stdout):
         loss_total = 0
         model.train()
-        for index, data in tenumerate(train_loader):
+        for index, data in tenumerate(train_loader, file=sys.stdout):
             st_x, st_y, _, _, _ = data
 
             model.optimizer.zero_grad()
@@ -183,7 +183,7 @@ def mult_eval(models, n_eval, dataset, test_loader, config, device, scales, rmtp
     with torch.no_grad():
         for model in models:
             model.eval()
-            for _ in trange(n_eval):
+            for _ in trange(n_eval, file=sys.stdout):
                 if rmtpp:
                     tll = eval_loss_rmtpp(model, test_loader, device)
                     sll_list.append(0.0)
