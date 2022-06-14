@@ -1,7 +1,7 @@
 import sys
 sys.path.append("ST-UQ")
 
-from tqdm import trange
+from tqdm.auto import trange
 
 import numpy as np
 import load_data as ld

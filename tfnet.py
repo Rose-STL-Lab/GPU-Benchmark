@@ -13,7 +13,7 @@ import random
 import time
 import sys
 from os.path import exists
-from tqdm import trange
+from tqdm.auto import trange
 
 sys.path.append("TF-net")
 from model import LES

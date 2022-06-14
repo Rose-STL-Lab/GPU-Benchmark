@@ -1,4 +1,4 @@
-from tqdm import tqdm
+from tqdm.auto import tqdm
 import numpy as np
 from PIL import Image
 from math import log, sqrt, pi
