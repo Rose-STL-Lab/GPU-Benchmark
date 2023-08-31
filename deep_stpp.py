@@ -57,12 +57,12 @@ logger.addHandler(ch)
 # pip install s3fs
 from s3fs.core import S3FileSystem
 s3 = S3FileSystem(
-   key='V4870SVBWMMXDER34V7V',
-   secret='ArxQb8fpO9b9zgMoqIGcnCRCCAQOZR5GRkt4gr9G',
-   client_kwargs={
-      'endpoint_url': 'https://us-southeast-1.linodeobjects.com',
-      'region_name': 'US'
-   }
+    key='jMc2Bgylpg3eyeAHV5Cu',                                                                       
+    secret='V3qP2YcCkpK6SJp7LOZlxdBTaQ2tR5i74xNEjDij',                                                
+    client_kwargs={                                                                                   
+        'endpoint_url': 'https://rosedata.ucsd.edu',                                                  
+        'region_name': 'US'                                                                           
+    } 
 )
 
 dataset = 'covid_nj_cases'
